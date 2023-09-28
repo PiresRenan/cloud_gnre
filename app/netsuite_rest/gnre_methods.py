@@ -1,6 +1,6 @@
 import requests
 
-from gerador_de_lotes_gnre import cd
+from ..gerador_de_lotes_gnre import cd
 from .connection import NS_Services
 
 

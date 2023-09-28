@@ -1,14 +1,14 @@
 {
      "builds": [
          {
-             "src": "cloud_gnre/main.py",
+             "src": "app/main.py",
              "use": "@vercel/python"
          }
      ],
      "routes": [
          {
              "src": "/(.*)",
-             "dest": "cloud_gnre/main.py"
+             "dest": "app/main.py"
          }
      ]
 }
