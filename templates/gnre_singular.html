@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+        <meta name="description" content="">
+        <meta name="author" content="Renan Pires">
+		<title>Gnre Exclusiva</title>
+        <link href="{{ url_for('static', filename='img/candide-favicon.png') }}" rel="icon">
+        <link href="{{ url_for('static', filename='css/global.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/single_gnre.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div>
+                <h1 id="letrero">GNRE única</h1>
+            </div>
+        </header>
+        <section>
+            <form id="gnreForm" method="post">
+                {{ form.csrf_token }}
+                <div>
+                    <div style="margin-bottom: 2.75rem">
+                        {{ form.nf_number.label }} {{ form.nf_number }}
+                    </div>
+                </div>
+                <div>
+                    <button type="submit">
+                        Submit
+                    </button>
+                    <a href="/gnre_em_lote">GNRE por data</a>
+                </div>
+                <div>
+                    <p></p>
+                </div>
+            </form>
+        </section>
+        <footer id="rodape">
+            <p>&copy; Candide Industria e Comercio ltda. Design: <a href="https://github.com/PiresRenan">Renan Pires</a>.</p>
+        </footer>
+        <script src="{{ url_for('static', filename= 'js/main.js') }}"></script>
+    </body>
+</html>

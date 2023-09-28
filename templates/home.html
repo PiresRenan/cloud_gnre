@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+        <meta name="description" content="">
+        <meta name="author" content="Renan Pires">
+		<title>NetSuite Candide</title>
+        <link href="{{ url_for('static', filename='img/candide-favicon.png') }}" rel="icon">
+        <link href="{{ url_for('static', filename='css/global.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div>
+                <h1 id="letrero">Gerador de GNRE</h1>
+            </div>
+        </header>
+        <section>
+            <div>
+                <p>Deseja realizar a emissão de gnre em lote?</p>
+                <a style="background-color: rgb(128,128,128); color: white; padding: .25rem .5rem" href={{ url_for('gnre_lote') }}>GNRE em lote</a>
+            </div>
+            <div>
+                <p>Deseja realizar a emissão gnre exclusiva?</p>
+                <a style="background-color: rgb(128,128,128); color: white; padding: .25rem .5rem" href={{ url_for('gnre_exclusiva') }}>GNRE singular</a>
+            </div>
+        </section>
+        <footer id="rodape">
+            <p>&copy; Candide Industria e Comercio ltda. Design: <a href="https://github.com/PiresRenan">Renan Pires</a>.</p>
+        </footer>
+        <script src="{{ url_for('static', filename= 'js/main.js') }}"></script>
+    </body>
+</html>

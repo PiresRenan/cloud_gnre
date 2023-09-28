@@ -1,0 +1,32 @@
+html {
+    align-items: center;
+    background-image: url("../img/fundo.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 92vh;
+    max-height: 90vh;
+    min-height: 84vh;
+    max-width: 95%;
+    min-width: 90%;
+    padding: 2rem 1rem 4px 1rem;
+    flex-grow: 1;
+    width: 95%;
+}
+
+#rodape {
+    align-self: flex-end;
+    display: flex;
+    bottom: 16px;
+    position: absolute;
+}
