@@ -1,6 +1,6 @@
 html {
     align-items: center;
-    background-image: url("fundo.jpg");
+    background-image: url("../img/fundo.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

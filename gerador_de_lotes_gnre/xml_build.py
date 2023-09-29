@@ -22,7 +22,6 @@ class Create:
         self.second = strftime("%S", data)
 
     def is_business_day(self, target):
-        # Verifica se a data é um dia útil (de segunda a sexta-feira)
         if target.weekday() < 5:
             return True
         return False
@@ -55,23 +54,19 @@ class Create:
             string_final += '<itensGNRE>'
             string_final += '<item>'
             string_final += '<receita>100099</receita>'
-
             if uf == 'MT':
                 string_final += '<detalhamentoReceita>000105</detalhamentoReceita>'
-
             if uf == 'AC':
                 string_final += '<detalhamentoReceita>000017</detalhamentoReceita>'
-
             if uf == 'TO':
                 string_final += '<detalhamentoReceita>000005</detalhamentoReceita>'
-
             if uf == 'AC' or uf == 'AL' or uf == 'BA' or uf == 'AP' or uf == 'CE' or uf == 'DF' or uf == 'GO' or uf == 'MA' or uf == 'MG' or uf == 'MS' or uf == 'PA' or uf == 'PI' or uf == 'PR' or uf == 'RO' or uf == 'RR' or uf == 'SE' or uf == 'TO':
                 string_final += f'<documentoOrigem tipo="10">{chave_nota[25:34]}</documentoOrigem>'
 
-            if uf == 'AM' or uf == 'MT' or uf == 'PE' or uf == 'RS':
+            if uf == 'AM' or uf == 'PE' or uf == 'RS':
                 string_final += f'<documentoOrigem tipo="22">{chave_nota[25:34]}</documentoOrigem>'
 
-            elif uf == 'RJ' or uf == 'SC':
+            elif uf == 'MT' or uf == 'SC':
                 string_final += f'<documentoOrigem tipo="24">{chave_nota}</documentoOrigem>'
 
             if uf == 'AM' or uf == 'BA' or uf == 'AC' or uf == 'CE' or uf == 'DF' or uf == 'MA' or uf == 'MS' or uf == 'PE' or uf == 'AL' or uf == 'GO' or uf == 'RR' or uf == 'TO':
@@ -94,8 +89,12 @@ class Create:
                 datav = self.add_months(1)
             else:
                 datav = self.add_months(5)
-
-            string_final += f'<dataVencimento>{datav}</dataVencimento>'
+            if uf == 'PR':
+                hoje_data = lambda: datetime.date.today().strftime('%Y-%m-%d')
+                final_data = hoje_data()
+                string_final += f'<dataVencimento>{final_data}</dataVencimento>'
+            else:
+                string_final += f'<dataVencimento>{datav}</dataVencimento>'
             string_final += f'<valor tipo="11">{valor_total}</valor>'
 
             if uf == 'RN':

@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from ..netsuite_rest import gnre_methods
+from netsuite_rest import gnre_methods
 from . import xml_build
 
 

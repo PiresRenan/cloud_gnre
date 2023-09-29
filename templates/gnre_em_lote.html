@@ -5,29 +5,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
         <meta name="description" content="">
         <meta name="author" content="Renan Pires">
-		<title>NetSuite Candide</title>
+		<title>GNRE em lote</title>
         <link href="{{ url_for('static', filename='img/candide-favicon.png') }}" rel="icon">
         <link href="{{ url_for('static', filename='css/global.css') }}" rel="stylesheet">
-        <link href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/em_lote.css') }}" rel="stylesheet">
     </head>
     <body>
         <header>
             <div>
-                <h1 id="letrero">Gerador de GNRE</h1>
+                <h1 id="letrero">GNRE em lote</h1>
             </div>
         </header>
         <section>
             <form method="post" action="#">
                     {{ form.csrf_token }}
-                    <div>
-                        <div id="data-inicial" class="field half">
+                    <div id="catch_data">
+                        <div id="data-inicial">
                             {{ form.start_date.label }} {{ form.start_date }}
                         </div>
-                        <div class="field half">
+                        <div id="data-final">
                             {{ form.end_date.label }} {{ form.end_date }}
                         </div>
                     </div>
-                    <div >
+                    <div id="finish">
                         <button type="submit">
                             Enviar
                         </button>
