@@ -1,4 +1,5 @@
 import os
+import threading
 from datetime import datetime
 
 from flask import Flask, render_template, request, flash, url_for, redirect
@@ -6,6 +7,7 @@ from flask import Flask, render_template, request, flash, url_for, redirect
 from gerador_de_lotes_gnre import main
 from model.forms import DateFormForGNRE, GNREUnico
 from services.alerts import OutlookMailSender
+from netsuite_rest import gnre_methods
 
 app = Flask(__name__)
 
@@ -41,7 +43,8 @@ def gnre_lote():
                 data_inicio = data_inicio.strftime('%d/%m/%Y')
                 data_termino = data_termino.strftime('%d/%m/%Y')
                 obj_creator = main.Gerador()
-                xml_builded = obj_creator.criar_guias_em_lote(data_inicio, data_termino)
+                returned = obj_creator.criar_guias_em_lote(data_inicio, data_termino)
+                xml_builded = returned[0]
                 if not xml_builded == 'Inexistente':
                     flash('GNRE gerada com sucesso!', 'success')
                     temp_dir = 'temp'
@@ -52,12 +55,24 @@ def gnre_lote():
                         r.write(xml_builded)
                     obj_sender = OutlookMailSender('1')
                     obj_sender.send_gnre()
+                    async_check_gnre(returned[1])
                     return render_template('gnre_em_lote.html', form=form)
                 else:
                     flash('Sem novas notas!', 'error')
                     return render_template('gnre_em_lote.html', form=form)
 
     return render_template('gnre_em_lote.html', form=form)
+
+
+def check_gnre_thread(notas):
+    obj_bd = gnre_methods.Gerador_Methods()
+    for nota in notas:
+        obj_bd.check_gnre(nota)
+
+
+def async_check_gnre(notas):
+    thread = threading.Thread(target=check_gnre_thread, args=(notas,))
+    thread.start()
 
 
 @app.route('/gnre_exclusiva', methods=["GET", "POST"])
@@ -85,4 +100,4 @@ def gnre_exclusiva():
 
 
 if __name__ == '__main__':
-    app.run(debug=True,  port=os.getenv("PORT", default=5000))
+    app.run(host="0.0.0.0", port=9000, debug=True)

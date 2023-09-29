@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from ..netsuite_rest import gnre_methods
+from netsuite_rest import gnre_methods
 from . import xml_build
 
 
@@ -15,9 +15,7 @@ class Gerador:
         try:
             ns_id_1 = nf_encontrada.get('id_doc_fiscal')
             netsuite_id = nf_encontrada.get('ns_id')
-            uf_e_mun = self.obj_bd.get_UF(netsuite_id)
-            uf_ = uf_e_mun[1]
-            mun = uf_e_mun[0]
+            uf_ = nf_encontrada.get('uf')
             if not uf_ == 'SP':
                 valor_nota = float(nf_encontrada.get('total_icmsts'))
                 valor_nota = '{:.2f}'.format(valor_nota)
@@ -37,25 +35,22 @@ class Gerador:
 
     def criar_guias_em_lote(self, data_de_inicio: str, data_de_termino: str):
         agregado_xml = ""
+        notas_a_atualizar = []
         try:
             nfs_do_dia = self.obj_bd.get_NFE(data_de_inicio, data_de_termino)
             for nota in nfs_do_dia:
                 try:
                     ns_id_1 = nota.get('id_doc_fiscal')
-                    netsuite_id = nota.get('ns_id')
-                    uf_e_mun = self.obj_bd.get_UF(netsuite_id)
-                    uf_ = uf_e_mun[1]
-                    mun = uf_e_mun[0]
-                    checked = nota.get('flag')
-                    if not uf_ == 'SP' and checked != 'T':
-                        valor_nota = nota.get('total_icmsts')
-                        valor_nota = '{:.2f}'.format(valor_nota)
-                        ie = nota.get('ie_cliente')
-                        cliente_nome = nota.get('razao_social')
-                        chave_acesso = nota.get('key_value')
-                        xml_buildado = self.obj_creator.create_gnre(uf_, ie, valor_nota, chave_acesso)
-                        agregado_xml += xml_buildado
-                        self.obj_bd.check_gnre(ns_id_1)
+                    # netsuite_id = nota.get('ns_id')
+                    uf = nota.get('uf')
+                    valor_nota = float(nota.get('total_icmsts'))
+                    valor_nota = '{:.2f}'.format(valor_nota)
+                    ie = nota.get('ie_cliente')
+                    # cliente_nome = nota.get('razao_social')
+                    chave_acesso = nota.get('key_value')
+                    xml_buildado = self.obj_creator.create_gnre(uf, ie, valor_nota, chave_acesso)
+                    agregado_xml += xml_buildado
+                    notas_a_atualizar.append(ns_id_1)
                 except Exception as e:
                     print(e)
         except Exception as e:
@@ -63,7 +58,7 @@ class Gerador:
             return False
         if agregado_xml != '':
             final = self.gerar_xml_final(agregado_xml)
-            return final
+            return final, notas_a_atualizar
         else:
             return "Inexistente"
 

@@ -1,6 +1,6 @@
 import requests
 
-from ..gerador_de_lotes_gnre import cd
+from gerador_de_lotes_gnre import cd
 from .connection import NS_Services
 
 
@@ -23,13 +23,19 @@ class Gerador_Methods(NS_Services):
                  f"c.id AS ns_id, "
                  f"c.custentity_enl_legalname AS razao_social, "
                  f"c.custentity_enl_ienum AS ie_cliente, "
+                 f"c.custentitycan_ufcli_paragnre AS uf, "
                  f"SUM(tx_trans.custrecord_enl_taxamount) AS total_ICMSTS "
-                 f"FROM transaction AS t LEFT JOIN customer AS c ON c.id = t.entity FULL JOIN customrecord_enl_taxtrans AS tx_trans ON tx_trans.custrecord_enl_tt_orderid = t.id "
-                 f"WHERE t.trandate >= '{data_comeco}' AND t.trandate <= '{data_limite}' AND t.type = 'CustInvc' AND t.approvalstatus = '2' AND tx_trans.custrecord_enl_taxcode = 'icmsSt' "
-                 f"GROUP BY t.id, t.createdby, t.custbody_avlr_document_code, "
-                 f"t.custbody_enl_linknotafiscal, t.custbody_enl_fiscaldocnumber, t.trandate, "
-                 f"t.custbody_can_gerougnreemlote, t.custbody_enl_accesskey, c.custentity_enl_cnpjcpf, "
-                 f"c.companyname, c.id, c.custentity_enl_legalname, c.custentity_enl_ienum"
+                 f"FROM "
+                 f"transaction AS t LEFT JOIN customer AS c ON c.id=t.entity LEFT JOIN customrecord_enl_taxtrans AS tx_trans ON tx_trans.custrecord_enl_tt_orderid=t.id "
+                 f"WHERE "
+                 f"t.trandate >= '{ data_comeco }' AND t.trandate >= '{ data_limite }' AND "
+                 f"t.type = 'CustInvc' AND t.approvalstatus = '2' AND "
+                 f"tx_trans.custrecord_enl_taxcode = 'icmsSt' AND t.custbody_can_gerougnreemlote = 'F' AND "
+                 f"c.custentitycan_ufcli_paragnre!='SP' AND c.custentitycan_ufcli_paragnre!='RJ' "
+                 f"GROUP BY "
+                 f"t.id, t.createdby, t.custbody_avlr_document_code, t.custbody_enl_linknotafiscal, t.custbody_enl_fiscaldocnumber, "
+                 f"t.trandate, t.custbody_can_gerougnreemlote, t.custbody_enl_accesskey, c.custentity_enl_cnpjcpf, c.companyname, "
+                 f"c.id, c.custentity_enl_legalname, c.custentity_enl_ienum, c.custentitycan_ufcli_paragnre"
         }
         nf_info = self.get_results(1, "POST", "", payload)
         nf_info = nf_info.json()
@@ -55,13 +61,19 @@ class Gerador_Methods(NS_Services):
                  f"c.id AS ns_id, "
                  f"c.custentity_enl_legalname AS razao_social, "
                  f"c.custentity_enl_ienum AS ie_cliente, "
+                 f"c.custentitycan_ufcli_paragnre AS uf, "
                  f"SUM(tx_trans.custrecord_enl_taxamount) AS total_ICMSTS "
-                 f"FROM transaction AS t LEFT JOIN customer AS c ON c.id = t.entity FULL JOIN customrecord_enl_taxtrans AS tx_trans ON tx_trans.custrecord_enl_tt_orderid = t.id "
-                 f"WHERE t.custbody_enl_fiscaldocnumber = '{nf_number}' AND t.type = 'CustInvc' AND t.approvalstatus = '2' AND tx_trans.custrecord_enl_taxcode = 'icmsSt' "
-                 f"GROUP BY t.id, t.createdby, t.custbody_avlr_document_code, "
-                 f"t.custbody_enl_linknotafiscal, t.custbody_enl_fiscaldocnumber, t.trandate, "
-                 f"t.custbody_can_gerougnreemlote, t.custbody_enl_accesskey, c.custentity_enl_cnpjcpf, "
-                 f"c.companyname, c.id, c.custentity_enl_legalname, c.custentity_enl_ienum"
+                 f"FROM "
+                 f"transaction AS t LEFT JOIN customer AS c ON c.id=t.entity LEFT JOIN customrecord_enl_taxtrans AS tx_trans ON tx_trans.custrecord_enl_tt_orderid=t.id "
+                 f"WHERE "
+                 f"t.custbody_enl_fiscaldocnumber = '{ nf_number }' AND "
+                 f"t.type = 'CustInvc' AND t.approvalstatus = '2' AND "
+                 f"tx_trans.custrecord_enl_taxcode = 'icmsSt' AND "
+                 f"c.custentitycan_ufcli_paragnre!='SP' AND c.custentitycan_ufcli_paragnre!='RJ' "
+                 f"GROUP BY "
+                 f"t.id, t.createdby, t.custbody_avlr_document_code, t.custbody_enl_linknotafiscal, t.custbody_enl_fiscaldocnumber, "
+                 f"t.trandate, t.custbody_can_gerougnreemlote, t.custbody_enl_accesskey, c.custentity_enl_cnpjcpf, c.companyname, "
+                 f"c.id, c.custentity_enl_legalname, c.custentity_enl_ienum, c.custentitycan_ufcli_paragnre"
         }
         nf_info = self.get_results(1, "POST", "", payload)
         nf_info = nf_info.json()
@@ -114,5 +126,6 @@ class Gerador_Methods(NS_Services):
 
     def check_gnre(self, id):
         payload = {"custbody_can_gerougnreemlote": True}
-        url = f"https://7586908-sb1.suitetalk.api.netsuite.com/services/rest/record/v1/invoice/{id}"
-        return self.get_results(1, "PATCH", url, payload)
+        url = f"https://7586908.suitetalk.api.netsuite.com/services/rest/record/v1/invoice/{id}"
+        response = self.get_results(1, "PATCH", url, payload)
+        return response

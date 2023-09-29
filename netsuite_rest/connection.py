@@ -89,7 +89,6 @@ class NS_Services:
                 return results
 
         elif http_method == "PATCH":
-            with requests.patch(url=url_, headers=header, json=data_raw_) as connection:
-                results = connection
-                print(results.text)
+            response = requests.request("PATCH", url_, headers=header, json=data_raw_)
+            results = response.text
             return results

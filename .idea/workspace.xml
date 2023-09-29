@@ -4,23 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="baadfcf5-8cdf-45b9-aca5-b3032c1a04b9" name="Changes" comment="">
+    <list default="true" id="ec6cff75-4055-47c7-b871-e44c958f9a25" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/cloud_gnre.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cloud_gnre.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vercel.json" beforeDir="false" afterPath="$PROJECT_DIR$/vercel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gerador_de_lotes_gnre/cd.py" beforeDir="false" afterPath="$PROJECT_DIR$/gerador_de_lotes_gnre/cd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gerador_de_lotes_gnre/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/gerador_de_lotes_gnre/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gerador_de_lotes_gnre/xml_build.py" beforeDir="false" afterPath="$PROJECT_DIR$/gerador_de_lotes_gnre/xml_build.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/netsuite_rest/SignSHA256.py" beforeDir="false" afterPath="$PROJECT_DIR$/netsuite_rest/SignSHA256.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/netsuite_rest/connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/netsuite_rest/connection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/netsuite_rest/gnre_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/netsuite_rest/gnre_methods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/alerts.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/alerts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/em_lote.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/em_lote.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/single_gnre.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/single_gnre.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/img/__MACOSX/._fundo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/__MACOSX/._fundo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/img/__MACOSX/._logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/__MACOSX/._logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/img/bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/img/candide-favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/candide-favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/img/candide-logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/candide-logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/img/fundo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/fundo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/img/overlay.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/overlay.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/img/pic01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/pic01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/img/pic02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/pic02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/img/pic03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/pic03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/img/vector/default-monochrome-black.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/vector/default-monochrome-black.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/img/vector/default-monochrome-white.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/vector/default-monochrome-white.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/img/vector/default-monochrome.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/vector/default-monochrome.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/img/vector/default.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/vector/default.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/img/vector/isolated-layout.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/vector/isolated-layout.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/img/vector/isolated-monochrome-black.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/vector/isolated-monochrome-black.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/img/vector/isolated-monochrome-white.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/vector/isolated-monochrome-white.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/gnre_em_lote.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gnre_em_lote.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/gnre_singular.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gnre_singular.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vercel.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-        <option value="CSS File" />
-        <option value="Python Script" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,51 +58,63 @@
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
 }</component>
-  <component name="ProjectId" id="2W4U2fhmvzP4l4G7l19PZHkn3kZ" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2W4qwbvXfYpD8VFRcswUcnweIff" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\renan\PycharmProjects\cloud_gnre\app" />
-    </key>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="cloud_gnre" type="PythonConfigurationType" factoryName="Python">
+      <module name="cloud_gnre" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="baadfcf5-8cdf-45b9-aca5-b3032c1a04b9" name="Changes" comment="" />
-      <created>1695991142071</created>
+      <changelist id="ec6cff75-4055-47c7-b871-e44c958f9a25" name="Changes" comment="" />
+      <created>1696002443310</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1695991142071</updated>
-      <workItem from="1695991147100" duration="2500000" />
-      <workItem from="1695996376942" duration="4041000" />
+      <updated>1696002443310</updated>
+      <workItem from="1696002447209" duration="33000" />
+      <workItem from="1696003212312" duration="7901000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
