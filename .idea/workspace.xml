@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="baadfcf5-8cdf-45b9-aca5-b3032c1a04b9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/cloud_gnre.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cloud_gnre.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vercel.json" beforeDir="false" afterPath="$PROJECT_DIR$/vercel.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1695991142071</updated>
       <workItem from="1695991147100" duration="2500000" />
-      <workItem from="1695996376942" duration="3774000" />
+      <workItem from="1695996376942" duration="3959000" />
     </task>
     <servers />
   </component>
