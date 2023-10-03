@@ -65,12 +65,15 @@ class Create:
 
             if uf == 'AM' or uf == 'PE' or uf == 'RS':
                 string_final += f'<documentoOrigem tipo="22">{chave_nota[25:34]}</documentoOrigem>'
-
-            elif uf == 'MT' or uf == 'SC':
+            elif uf == 'MT':
+                string_final += f'<documentoOrigem tipo="22">{chave_nota}</documentoOrigem>'
+            elif uf == 'SC':
                 string_final += f'<documentoOrigem tipo="24">{chave_nota}</documentoOrigem>'
 
-            if uf == 'AM' or uf == 'BA' or uf == 'AC' or uf == 'CE' or uf == 'DF' or uf == 'MA' or uf == 'MS' or uf == 'PE' or uf == 'AL' or uf == 'GO' or uf == 'RR' or uf == 'TO':
+            if uf == 'AM' or uf == 'BA' or uf == 'AC' or uf == 'CE' or uf == 'DF' or uf == 'MA' or uf == 'MS' or uf == 'PE' or uf == 'GO' or uf == 'RR' or uf == 'TO':
                 string_final += '<produto>44</produto>'
+            elif uf == 'AL':
+                string_final += '<produto>45</produto>'
 
             if uf == 'AM' or uf == 'BA':
                 string_final += '<referencia>'
@@ -89,12 +92,12 @@ class Create:
                 datav = self.add_months(1)
             else:
                 datav = self.add_months(5)
-            if uf == 'PR':
-                hoje_data = lambda: datetime.date.today().strftime('%Y-%m-%d')
-                final_data = hoje_data()
-                string_final += f'<dataVencimento>{final_data}</dataVencimento>'
-            else:
-                string_final += f'<dataVencimento>{datav}</dataVencimento>'
+            # if uf == 'PR':
+            #     hoje_data = lambda: datetime.date.today().strftime('%Y-%m-%d')
+            #     final_data = hoje_data()
+            #     string_final += f'<dataVencimento>{final_data}</dataVencimento>'
+            # else:
+            string_final += f'<dataVencimento>{datav}</dataVencimento>'
             string_final += f'<valor tipo="11">{valor_total}</valor>'
 
             if uf == 'RN':

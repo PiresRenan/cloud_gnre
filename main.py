@@ -1,5 +1,7 @@
 import os
+import shutil
 import threading
+import time
 from datetime import datetime
 
 from flask import Flask, render_template, request, flash, url_for, redirect
@@ -45,16 +47,21 @@ def gnre_lote():
                 obj_creator = main.Gerador()
                 returned = obj_creator.criar_guias_em_lote(data_inicio, data_termino)
                 xml_builded = returned[0]
-                if not xml_builded == 'Inexistente':
+                if not xml_builded == 'I':
                     flash('GNRE gerada com sucesso!', 'success')
                     temp_dir = 'temp'
                     if not os.path.exists(temp_dir):
                         os.makedirs(temp_dir)
-                    gnre_file = os.path.join(temp_dir, 'gnre.xml')
+                    else:
+                        shutil.rmtree(temp_dir)
+                        os.makedirs(temp_dir)
+                    get_time_in_ms = lambda: int(time.time() * 1000)
+                    current_time_ms = get_time_in_ms()
+                    gnre_file = os.path.join(temp_dir, 'gnre{}.xml'.format(current_time_ms))
                     with open(gnre_file, 'w') as r:
                         r.write(xml_builded)
                     obj_sender = OutlookMailSender('1')
-                    obj_sender.send_gnre()
+                    obj_sender.send_gnre(path=gnre_file)
                     async_check_gnre(returned[1])
                     return render_template('gnre_em_lote.html', form=form)
                 else:
@@ -81,17 +88,25 @@ def gnre_exclusiva():
     if form.validate_on_submit():
         nfe_n = form.nf_number.data
         obj_creator = main.Gerador()
-        xml_builded_ = obj_creator.criar_unique(nfe_n)
-        if not xml_builded_ == 'Inexistente':
+        created = obj_creator.criar_unique(nfe_n)
+        xml_builded_ = created[0]
+        a_atualizar = created[1]
+        if not xml_builded_ == 'I':
             flash('GNRE gerada com sucesso!', 'success')
             temp_dir = 'temp'
             if not os.path.exists(temp_dir):
                 os.makedirs(temp_dir)
-            gnre_file = os.path.join(temp_dir, 'gnre.xml')
+            else:
+                shutil.rmtree(temp_dir)
+                os.makedirs(temp_dir)
+            get_time_in_ms = lambda: int(time.time() * 1000)
+            current_time_ms = get_time_in_ms()
+            gnre_file = os.path.join(temp_dir, 'gnre{}.xml'.format(current_time_ms))
             with open(gnre_file, 'w') as r:
                 r.write(xml_builded_)
             obj_sender = OutlookMailSender('1')
-            obj_sender.send_gnre()
+            obj_sender.send_gnre(path=gnre_file)
+            async_check_gnre(a_atualizar)
             return render_template('gnre_singular.html', form=form)
         else:
             flash('Sem novas notas!', 'error')

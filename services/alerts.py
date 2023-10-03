@@ -46,13 +46,14 @@ class OutlookMailSender:
             print(e)
             return False
 
-    def send_gnre(self):
+    def send_gnre(self, path=None):
         recipient = 'contasareceber@candide.com.br'
         copy = ["suporte.renan@candide.com.br"]
         subject = "GNRE em lote"
         body = f'GNRE em lote em periodo de validação.'
-        binary_pdf = open('./temp/gnre.xml', 'rb')
-        payload = MIMEBase('application', 'octate-stream', Name='gnre.xml')
+        conf_path = path.split('\\')[1]
+        binary_pdf = open('./temp/{}'.format(conf_path), 'rb')
+        payload = MIMEBase('application', 'octate-stream', Name=conf_path)
         payload.set_payload((binary_pdf).read())
         encoders.encode_base64(payload)
         payload.add_header('Content-Decomposition', 'attachment', filename=self.pdf_name)

@@ -28,7 +28,7 @@ class Gerador_Methods(NS_Services):
                  f"FROM "
                  f"transaction AS t LEFT JOIN customer AS c ON c.id=t.entity LEFT JOIN customrecord_enl_taxtrans AS tx_trans ON tx_trans.custrecord_enl_tt_orderid=t.id "
                  f"WHERE "
-                 f"t.trandate >= '{ data_comeco }' AND t.trandate >= '{ data_limite }' AND "
+                 f"t.trandate >= '{ data_comeco }' AND t.trandate <= '{ data_limite }' AND "
                  f"t.type = 'CustInvc' AND t.approvalstatus = '2' AND "
                  f"tx_trans.custrecord_enl_taxcode = 'icmsSt' AND t.custbody_can_gerougnreemlote = 'F' AND "
                  f"c.custentitycan_ufcli_paragnre!='SP' AND c.custentitycan_ufcli_paragnre!='RJ' "

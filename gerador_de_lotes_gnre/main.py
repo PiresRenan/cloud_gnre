@@ -22,14 +22,14 @@ class Gerador:
                 ie = nf_encontrada.get('ie_cliente')
                 cliente_nome = nf_encontrada.get('razao_social')
                 chave_acesso = nf_encontrada.get('key_value')
-                xml_buildado = self.obj_creator.create_gnre(uf_, ie, valor_nota, chave_acesso)
-                agregado_xml += xml_buildado
-                self.obj_bd.check_gnre(ns_id_1)
+                if chave_acesso is not None:
+                    xml_buildado = self.obj_creator.create_gnre(uf_, ie, valor_nota, chave_acesso)
+                    agregado_xml += xml_buildado
         except Exception as e:
             print(e)
         if agregado_xml != '':
             final = self.gerar_xml_final(agregado_xml)
-            return final
+            return final, ns_id_1
         else:
             return "Inexistente"
 
@@ -48,9 +48,10 @@ class Gerador:
                     ie = nota.get('ie_cliente')
                     # cliente_nome = nota.get('razao_social')
                     chave_acesso = nota.get('key_value')
-                    xml_buildado = self.obj_creator.create_gnre(uf, ie, valor_nota, chave_acesso)
-                    agregado_xml += xml_buildado
-                    notas_a_atualizar.append(ns_id_1)
+                    if chave_acesso is not None:
+                        xml_buildado = self.obj_creator.create_gnre(uf, ie, valor_nota, chave_acesso)
+                        agregado_xml += xml_buildado
+                        notas_a_atualizar.append(ns_id_1)
                 except Exception as e:
                     print(e)
         except Exception as e:
