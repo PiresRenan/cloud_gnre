@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ec6cff75-4055-47c7-b871-e44c958f9a25" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gerador_de_lotes_gnre/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/gerador_de_lotes_gnre/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gerador_de_lotes_gnre/xml_build.py" beforeDir="false" afterPath="$PROJECT_DIR$/gerador_de_lotes_gnre/xml_build.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/netsuite_rest/gnre_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/netsuite_rest/gnre_methods.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/alerts.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/alerts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/gnre.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +74,10 @@
       <updated>1696002443310</updated>
       <workItem from="1696002447209" duration="33000" />
       <workItem from="1696003212312" duration="7969000" />
-      <workItem from="1696346312155" duration="6258000" />
+      <workItem from="1696346312155" duration="6519000" />
+      <workItem from="1696430299538" duration="331000" />
+      <workItem from="1696450653224" duration="486000" />
+      <workItem from="1696515016289" duration="568000" />
     </task>
     <servers />
   </component>

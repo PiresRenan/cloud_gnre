@@ -11,6 +11,7 @@ class Gerador_Methods(NS_Services):
         payload = {
             "q": f"SELECT "
                  f"t.id AS id_doc_fiscal, "
+                 f"t.custbodycan_stliberada AS st_liberada, "
                  f"t.createdby AS criado_apartir_de, "
                  f"t.custbody_avlr_document_code AS nf_avalara_code, "
                  f"t.custbody_enl_linknotafiscal AS url_nf, "
@@ -29,11 +30,11 @@ class Gerador_Methods(NS_Services):
                  f"transaction AS t LEFT JOIN customer AS c ON c.id=t.entity LEFT JOIN customrecord_enl_taxtrans AS tx_trans ON tx_trans.custrecord_enl_tt_orderid=t.id "
                  f"WHERE "
                  f"t.trandate >= '{ data_comeco }' AND t.trandate <= '{ data_limite }' AND "
-                 f"t.type = 'CustInvc' AND t.approvalstatus = '2' AND "
+                 f"t.type = 'CustInvc' AND t.approvalstatus = '2' AND t.custbodycan_stliberada = 'T' AND "
                  f"tx_trans.custrecord_enl_taxcode = 'icmsSt' AND t.custbody_can_gerougnreemlote = 'F' AND "
                  f"c.custentitycan_ufcli_paragnre!='SP' AND c.custentitycan_ufcli_paragnre!='RJ' "
                  f"GROUP BY "
-                 f"t.id, t.createdby, t.custbody_avlr_document_code, t.custbody_enl_linknotafiscal, t.custbody_enl_fiscaldocnumber, "
+                 f"t.id, t.createdby, t.custbodycan_stliberada, t.custbody_avlr_document_code, t.custbody_enl_linknotafiscal, t.custbody_enl_fiscaldocnumber, "
                  f"t.trandate, t.custbody_can_gerougnreemlote, t.custbody_enl_accesskey, c.custentity_enl_cnpjcpf, c.companyname, "
                  f"c.id, c.custentity_enl_legalname, c.custentity_enl_ienum, c.custentitycan_ufcli_paragnre"
         }
