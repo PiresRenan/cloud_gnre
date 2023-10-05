@@ -51,7 +51,11 @@ class OutlookMailSender:
         copy = ["suporte.renan@candide.com.br"]
         subject = "GNRE em lote"
         body = f'GNRE em lote em periodo de validação.'
-        conf_path = path.split('\\')[1]
+        print(path)
+        try:
+            conf_path = path.split('\\')[1]
+        except:
+            conf_path = path.split('/')[1]
         binary_pdf = open('./temp/{}'.format(conf_path), 'rb')
         payload = MIMEBase('application', 'octate-stream', Name=conf_path)
         payload.set_payload((binary_pdf).read())

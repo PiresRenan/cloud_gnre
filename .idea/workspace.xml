@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ec6cff75-4055-47c7-b871-e44c958f9a25" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netsuite_rest/gnre_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/netsuite_rest/gnre_methods.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/alerts.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/alerts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/gnre1696449823243.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +77,8 @@
       <workItem from="1696346312155" duration="6519000" />
       <workItem from="1696430299538" duration="331000" />
       <workItem from="1696450653224" duration="486000" />
-      <workItem from="1696515016289" duration="568000" />
+      <workItem from="1696515016289" duration="2830000" />
+      <workItem from="1696520403789" duration="594000" />
     </task>
     <servers />
   </component>
