@@ -104,9 +104,9 @@ Renan Pires.
                 """
         else:
             mensagem = "GNRE gerada"
-        # recipient = 'financeiro@candide.com.br'
-        recipient = 'suporte.renan@candide.com.br'
-        # copy = ['suporte.renan@candide.com.br', 'contasareceber@candide.com.br']
+        recipient = 'financeiro@candide.com.br'
+        # recipient = 'suporte.renan@candide.com.br'
+        copy = ['suporte.renan@candide.com.br', 'contasareceber@candide.com.br']
         subject = "GNRE em lote"
         # body = "GNRE"
         body = mensagem
