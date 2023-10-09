@@ -61,7 +61,7 @@ def gnre_lote():
                     with open(gnre_file, 'w') as r:
                         r.write(xml_builded)
                     obj_sender = OutlookMailSender('1')
-                    obj_sender.send_gnre(path=gnre_file)
+                    obj_sender.send_gnre(path=gnre_file, info=returned[2])
                     async_check_gnre(returned[1])
                     return render_template('gnre_em_lote.html', form=form)
                 else:
@@ -105,7 +105,7 @@ def gnre_exclusiva():
             with open(gnre_file, 'w') as r:
                 r.write(xml_builded_)
             obj_sender = OutlookMailSender('1')
-            obj_sender.send_gnre(path=gnre_file)
+            obj_sender.send_gnre(path=gnre_file, info=created[2])
             async_check_gnre(a_atualizar)
             return render_template('gnre_singular.html', form=form)
         else:
