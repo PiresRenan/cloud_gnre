@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec6cff75-4055-47c7-b871-e44c958f9a25" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gerador_de_lotes_gnre/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/gerador_de_lotes_gnre/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netsuite_rest/gnre_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/netsuite_rest/gnre_methods.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/alerts.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/alerts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/gnre1696520155608.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +82,8 @@
       <workItem from="1696529098933" duration="8000" />
       <workItem from="1696597282560" duration="13728000" />
       <workItem from="1696616932408" duration="1887000" />
-      <workItem from="1696863015399" duration="712000" />
+      <workItem from="1696863015399" duration="1055000" />
+      <workItem from="1696882285983" duration="94000" />
     </task>
     <servers />
   </component>

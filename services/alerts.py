@@ -104,8 +104,9 @@ Renan Pires.
                 """
         else:
             mensagem = "GNRE gerada"
-        recipient = 'financeiro@candide.com.br'
-        copy = ['suporte.renan@candide.com.br', 'contasareceber@candide.com.br']
+        # recipient = 'financeiro@candide.com.br'
+        recipient = 'suporte.renan@candide.com.br'
+        # copy = ['suporte.renan@candide.com.br', 'contasareceber@candide.com.br']
         subject = "GNRE em lote"
         # body = "GNRE"
         body = mensagem
@@ -124,7 +125,7 @@ Renan Pires.
 
         msg['From'] = self.username
         msg['To'] = recipient
-        msg['Cc'] = ', '.join(copy)
+        # msg['Cc'] = ', '.join(copy)
         msg['Subject'] = subject
         msg.attach(MIMEText(body))
 

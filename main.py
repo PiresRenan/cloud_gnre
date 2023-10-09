@@ -22,6 +22,16 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 def home():
     return render_template('home.html')
 
+def check_gnre_thread(notas):
+    obj_bd = gnre_methods.Gerador_Methods()
+    for nota in notas:
+        obj_bd.check_gnre(nota)
+
+
+def async_check_gnre(notas):
+    thread = threading.Thread(target=check_gnre_thread, args=(notas,))
+    thread.start()
+
 
 @app.route('/gnre_em_lote', methods=["GET", "POST"])
 def gnre_lote():
@@ -69,17 +79,6 @@ def gnre_lote():
                     return render_template('gnre_em_lote.html', form=form)
 
     return render_template('gnre_em_lote.html', form=form)
-
-
-def check_gnre_thread(notas):
-    obj_bd = gnre_methods.Gerador_Methods()
-    for nota in notas:
-        obj_bd.check_gnre(nota)
-
-
-def async_check_gnre(notas):
-    thread = threading.Thread(target=check_gnre_thread, args=(notas,))
-    thread.start()
 
 
 @app.route('/gnre_exclusiva', methods=["GET", "POST"])
